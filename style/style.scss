@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600&display=swap');
+
+$white: #fff;
+$black: #000;
+$orange: #FF6336;
+$light-orange: #FF9C7D;
+$light-blue: #C9E8F2;
+$light-brown: #DABC98;
+$grey: #c4c4c4;
+$dark50: rgba(0, 0, 0, 0.5);
+$light-yellow: #fff8e4;
+
+@mixin Roboto($fs, $fw, $lh){
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin flex($js, $ai, $gp, $fd){
+    display: flex;
+    justify-content: $js;
+    align-items: $ai;
+    gap: $gp;
+    flex-direction: $fd;
+}
+
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.header{
+    @include flex(space-around, center, 52px, none);
+    padding: 34px 0 25px 0;
+    border-bottom: 1px solid $grey;
+    
+    .btn{
+        padding: 0 0 0  300px;
+        .log-in{
+            @include Roboto(16px, 600, 45px);
+            background-color: $white;
+            border: 1px solid $dark50;
+            padding: 1px 36px;
+        }
+
+        .try-it{
+            @include Roboto(16px, 600, 45px);
+            background-color: $orange;
+            border: 2px solid $orange;
+            color: $white;
+            padding: 0 21px;
+        }
+    }
+}
+
+.nav{
+    @include flex(center, center, 40px, row);
+
+    .item{
+        @include Roboto(15px, 400, 20px);
+        
+        a{
+            color: $black;
+        }
+    }
+}
+
+.platform{
+    @include flex(center, center, 5px, none);
+    max-width: 100%;
+    width: 90%;
+    padding: 75px;
+}
+
+.description{
+    @include flex(center, flex-start, 25px, column);
+    h1{
+        @include Roboto(65px, 600, 70px);
+    }
+    
+    p{
+        @include Roboto(25px, 400, 35px);
+        padding: 25px 0;
+    }
+
+    .btn{
+        .log-in{
+            @include Roboto(16px, 600, 45px);
+            background-color: $white;
+            border: 1px solid $dark50;
+            padding: 1px 41px;
+        }
+        .try-it{
+            @include Roboto(16px, 600, 45px);
+            background-color: $orange;
+            border: 2px solid $orange;
+            color: $white;
+            padding: 1px 29px;
+        }
+    }
+
+    span{
+        @include Roboto(15px, 400, 25px);
+    }
+}
+
+.companies{
+    @include flex(center, center, 70px, column);
+    background-color: $light-orange;
+    max-width: 100%;
+    height: 455px;
+    h1{
+        @include Roboto(50px, 600, 60px);
+    }
+
+    .svg{
+        @include flex(center, center, 103px, row);
+    }
+}
+
+.benefits{
+    @include flex(center, center, 250px, column);
+    max-width: 100%;
+    padding: 0 75px 150px 75px;
+    .start{
+        @include flex(center, center, 165px, row);
+
+        .item{
+            @include flex(flex-start, flex-start, 30px, column);
+            width: 493px;
+            h1{
+                @include Roboto(50px, 600, 60px);
+            }
+            p{
+                @include Roboto(20px, 400, 30px);
+            }
+            a{
+                @include Roboto(20px, 600, 30px);
+                color: $black;
+            }
+        }
+    }    
+
+    .end{
+        @include flex(center, center, 165px, row);
+        border: none;
+
+        .item{
+            @include flex(flex-start, flex-start, 30px, column);
+            
+            h1{
+                @include Roboto(50px, 600, 60px);
+                width: 370px;
+            }
+            p{
+                @include Roboto(20px, 400, 30px);
+                width: 520px;
+            }
+            a{
+                @include Roboto(20px, 600, 30px);
+                color: $black;
+            }
+        }
+    }
+}   
+
+.usage{
+    @include flex(center, center, 79px, column);
+    background-color: $light-yellow;
+    padding: 0 0 93px 0;
+
+    h1{
+        @include Roboto(50px, 600, 60px);
+        padding: 120px 0 0 0;
+    }
+
+    .examples{
+        @include flex(center, center, 110px, row);
+        
+    }
+    .item{
+        @include flex(center, center, 23px, column);
+        width: 330px;
+        height: 294px;
+        text-align: center;
+        span{
+            @include Roboto(25px, 600, 35px);
+        }
+        p{
+            @include Roboto(18px, 400, 25px);
+            a{
+                color: $black;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.teams{
+    @include flex(space-around, flex-start, 75px, column);
+    padding: 0 75px 67px 75px;
+    h1{
+        @include Roboto(50px, 600, 60px);
+        padding: 154px 0 0 0;
+    }
+
+    .types{
+        @include flex(center, center, 0, row);
+
+        .item{
+            @include flex(flex-start, flex-start, 24px, column);
+            h{
+                @include Roboto(30px, 600, 40px);
+            }
+
+            p, a{
+                @include Roboto(20px, 400, 30px);
+                color: $black;
+                width: 90%;
+                a{
+                    text-decoration: underline;
+                }
+            }
+            a{
+                padding: 0 0 100px 0;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.quote{
+    @include flex(space-around, center, 59px, row);
+    background-color: $light-blue;
+    max-width: 100%;
+    height: 448px;
+    padding: 0 75px;
+    .items{
+        @include flex(flex-start, flex-start, 0, column);
+        p{
+            @include Roboto(30px, 400, 40px);
+            width: 75%;
+            padding: 0 0 23px 0;
+        }
+        span{
+            @include Roboto(15px, 400, 25px);
+        }
+
+    }
+}
+
+.software{
+    @include flex(center, center, 0, row);
+    background-color: $light-brown;
+    max-width: 100%;
+    height: 332px;
+    
+    .text{
+        @include flex(flex-start, center, 67px, row);
+        border-right: 2px solid $black;
+
+        img{
+            padding: 0 0 0 54px;
+        }
+
+        span{
+            @include Roboto(35px, 600, 50px);
+            width: 50%;
+        }
+    }
+
+    .rating{
+        @include flex(center, center, 0, row);
+        padding: 0 100px 0 0;
+
+        .items{
+            @include flex(center, flex-start, 14px, column);
+            padding: 0 30px 0 71px;
+
+            span{
+                @include Roboto(15px, 400, 25px);
+            }
+
+            .star{
+                padding: 6px 0 0 0;
+            }
+        }
+    }
+}
+
+.tools{
+    @include flex(center, center, 0, column);
+    text-align: center;
+    padding: 0 0 162px 0;
+
+
+    h1{
+        @include Roboto(65px, 700, 75px);
+        padding: 169px 0 0 0;
+        width: 50%;
+    }
+
+    p{
+        @include Roboto(25px, 400, 30px);
+        width: 35%;
+        
+    }
+
+    img{
+        padding: 25px 0 32px 0;
+    }
+
+    button{
+        @include Roboto(16px, 600, 60px);
+        background-color: $orange;
+        color: $white;
+        padding: 0 20px;
+    }
+}
+
+.easy{
+    @include flex(center, center, 29px, column);
+    background-color: $light-orange;
+    max-width: 100%;
+    height: 600px;
+    text-align: center;
+
+    h1{
+        @include Roboto(65px, 600, 75px);
+        width: 50%;
+    }
+
+    span{
+        @include Roboto(20px, 400, 30px);
+        padding: 0 0 25px 0;
+    }
+
+    button{
+        @include Roboto(17px, 600, 60px);
+        background-color: $black;
+        color: $white;
+        padding: 0 40px;
+    }
+}
+
+.info{
+    @include flex(space-around, center, 0, none);
+    max-width: 100%;
+    padding: 0 75px;
+    background-color: $grey;
+
+    .case{
+        @include flex(center, flex-start, 11px, column);
+        padding: 92px 0 0 0;
+
+        h1{
+            @include Roboto(40px, 600, 50px);
+            padding: 0 0 6px 0;
+        }
+
+        img{
+            padding: 17px 0 20px 0;
+        }
+
+        p{
+            @include Roboto(20px, 400, 30px);
+            width: 50%;
+            padding: 0 0 4px 0;
+        }
+
+        a{
+            @include Roboto(20px, 600, 30px);
+            color: $black;
+            padding: 0 0 95px 0;
+        }
+    }
+
+    .menu{
+        @include flex(none, none, 34px, none);
+        
+        menu{
+            width: 187px;
+            padding: 0 0 270px 0;
+            @include flex(none, none, 15px, column);
+
+            h{
+                @include Roboto(20px, 600, 25px);
+            }
+    
+            a{
+                color: $black;
+            }
+        }
+    }
+}
+
+.footer{
+    @include flex(space-around, none, 700px, none);
+    padding: 52px 75px;
+    border-top: 1px solid $black;
+    background-color: $grey;
+
+    .item{
+        @include flex(flex-start, none, 14px, none);
+
+        p{
+            @include Roboto(12px, 400, 15px);
+            width: 55%;
+        }
+    }
+    .item1{
+        @include flex(none, none, 0, column);
+    }
+}
